@@ -162,6 +162,7 @@ h6 {
 
 .recipe-list-item {
     max-width: 64rem;
+    height: fit-content;
 }
 
 .recipe-list-item:hover {
@@ -172,6 +173,11 @@ h6 {
 .recipe-title-container {
     padding: var(--spacing-gutter-medium);
     padding-bottom: 2rem;
+}
+
+.recipe-title-container a {
+    text-decoration: none;
+    color: var(--color-primary-dark);
 }
 
 .recipe-author {
@@ -233,8 +239,6 @@ h6 {
     filter: brightness(2);
 }
 
-
-
 .main-content-detail .recipe-list-item {
     max-width: 84rem;
     margin: 0 auto;
@@ -243,6 +247,10 @@ h6 {
 .main-content-detail .recipe-list-item:hover {
     transform: scale(1);
     box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.preparation-steps {
+    padding: var(--spacing-gutter-medium);
 }
 
 .main-footer {
@@ -262,4 +270,35 @@ h6 {
 
 .main-footer a:hover {
     filter: brightness(0.8);
+}
+
+.preparation-steps h1,
+.preparation-steps h2,
+.preparation-steps h3,
+.preparation-steps h4,
+.preparation-steps h5,
+.preparation-steps h6,
+.preparation-steps p,
+.preparation-steps pre {
+    margin: 2rem 0;
+}
+
+.preparation-steps ol,
+.preparation-steps ul {
+    margin: 2rem;
+    padding: 0 2rem;
+}
+
+/* Generics */
+
+.center {
+    text-align: center;
+}
+
+.m-x {
+    margin: 0 var(--spacing-gutter-medium);
+}
+
+.m-y {
+    margin: var(--spacing-gutter-medium) 0;
 }
