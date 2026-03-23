@@ -145,8 +145,6 @@ h6 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
     gap: var(--spacing-gutter-large);
-    align-items: start;
-    /* 🔥 ESSENCIAL */
 }
 
 .recipe {
@@ -156,13 +154,6 @@ h6 {
     transition: all 300ms ease-in-out;
     border-radius: 0.4rem;
     overflow: hidden;
-
-    display: flex;
-    /* 🔥 NOVO */
-    flex-direction: column;
-    /* 🔥 NOVO */
-    height: 100%;
-    /* 🔥 NOVO */
 }
 
 .recipe img {
@@ -171,14 +162,7 @@ h6 {
 
 .recipe-list-item {
     max-width: 64rem;
-    height: 100%;
-
-    display: flex;
-    /* 🔥 NOVO */
-    flex-direction: column;
-    /* 🔥 NOVO */
-    justify-content: space-between;
-    /* 🔥 NOVO */
+    height: fit-content;
 }
 
 .recipe-list-item:hover {
@@ -203,17 +187,6 @@ h6 {
 .recipe-content {
     padding: var(--spacing-gutter-medium);
     padding-top: 2rem;
-
-    flex-grow: 1;
-    /* 🔥 FAZ O CARD FICAR IGUAL */
-}
-
-.recipe-cover img {
-    width: 100%;
-    height: 200px;
-    /* 🔥 PADRONIZA ALTURA */
-    object-fit: cover;
-    /* 🔥 NÃO DISTORCE */
 }
 
 .recipe-author-item {
@@ -316,6 +289,118 @@ h6 {
     padding: 0 2rem;
 }
 
+.pagination-content {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1rem 0.5rem;
+}
+
+.pagination .page-item {
+    background: var(--color-gray-3);
+    padding: 0.5rem 1rem;
+}
+
+.pagination .page-link {
+    text-decoration: none;
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
+.pagination .page-current {
+    background: var(--color-primary-dark);
+}
+
+/* Forms */
+.form-content {
+    max-width: 64rem;
+    margin: 0 auto;
+    margin-bottom: var(--spacing-gutter-medium);
+}
+
+.form-content label,
+.form-content .help-text,
+.errorlist {
+    display: block;
+    margin: 0.5rem 0;
+    font-size: 1.4rem;
+    list-style-type: none;
+}
+
+.errorlist {
+    color: var(--color-error-dark);
+}
+
+.form-content input {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 0.4rem;
+    border: 1px solid var(--color-primary-dark);
+}
+
+.form-content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: calc(var(--spacing-gutter-medium) / 2) var(--spacing-gutter-medium);
+}
+
+.form-content button {
+    padding: 1rem 2rem;
+    border: none;
+    background: var(--color-primary-dark);
+    color: var(--color-white);
+}
+
+/* Messages */
+.messages-container {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: calc(var(--spacing-gutter-medium) / 2);
+}
+
+.message {
+    padding: 1rem;
+    border-radius: 4px;
+    border: 1px solid var(--color-dark-text);
+    background: var(--color-gray-2);
+    color: var(--color-dark-text);
+}
+
+.message-error {
+    border: 1px solid var(--color-error-dark);
+    background: var(--color-error-light);
+    color: var(--color-error-dark);
+}
+
+.message-success {
+    border: 1px solid var(--color-success-dark);
+    background: var(--color-success-light);
+    color: var(--color-success-dark);
+}
+
+.message-warning {
+    border: 1px solid var(--color-warning-dark);
+    background: var(--color-warning-light);
+    color: var(--color-warning-dark);
+}
+
+.message-alert {
+    border: 1px solid var(--color-alert-dark);
+    background: var(--color-alert-light);
+    color: var(--color-alert-dark);
+}
+
+.message-info {
+    border: 1px solid var(--color-info-dark);
+    background: var(--color-info-light);
+    color: var(--color-info-dark);
+}
+
+.message-debug {
+    border: 1px solid var(--color-debug-dark);
+    background: var(--color-debug-light);
+    color: var(--color-debug-dark);
+}
+
 /* Generics */
 
 .center {
@@ -328,4 +413,12 @@ h6 {
 
 .m-y {
     margin: var(--spacing-gutter-medium) 0;
+}
+
+@media (max-width: 600px) {
+
+    .main-content-list,
+    .form-content-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    }
 }

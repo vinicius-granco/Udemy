@@ -1,10 +1,24 @@
 {% extends 'global/base.html' %}
 
-{% block title %}{{ title }}{% endblock title %}
+{% block title %}Home | {% endblock title %}
+
 {% block content %}
-<div class="main-content main-content-list container">
-    {% for recipe in recipes %}
-        {% include 'recipes/partials/recipe.html' %}
+
+{% if messages %}
+<div class="main-content center container">
+    {% for message in messages %}
+        {{ message }}
     {% endfor %}
+</div>
+{% endif %}
+
+<div class="main-content main-content-list container">
+{% for recipe in recipes %}
+    {% include 'recipes/partials/recipe.html' %}
+{% empty %}
+    <div class="center m-y">
+        <h1>No recipes found here 🥲</h1>
+    </div>
+{% endfor %}
 </div>
 {% endblock content %}
